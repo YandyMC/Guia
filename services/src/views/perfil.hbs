@@ -1,0 +1,31 @@
+<div class="container mt-2 py-4">
+    <h2 class="text-center py-2">Bienvenido {{user.identificacion}}</h2><hr>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-center">"Elecciones actuales"</h5>
+            <div class="row mt-4">
+                <div class="col-md-4 mx-auto">
+                    {{#each candidatos}}
+                    <div class="card">
+                        <img src="{{this.logoDePartido}}" alt="" class="card-img">
+                        <div class="card-body">
+                            <h6 class="text-center">Partido: {{this.nomDePartido}}</h6><hr>
+                            <h6 class="text-center">Lider: {{this.nomCanPres}} || Lista: {{this.numeroDeLista}}</h6>
+                        </div>
+                        <div class="card-footer">
+                            <h5 class="text-center">40%</h5>
+                            <button class="btn btn-info btn-block">Votar</button>
+                        </div>
+                    </div>
+                    {{else}}
+                        <div class="col-md-10 mx-auto">
+                            <div class="card card-body text-center p-4">
+                                <h4>No hay elecciones estudiantiles actuales</h4><hr>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

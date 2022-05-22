@@ -1,0 +1,65 @@
+<div class="container mt-4 py-4">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-3 mx-auto py-2">
+                <div class="py-4 h-100 text-center">
+                    {{#if candidato.logoDePartido}}
+                        <h5>Actualizando Datos</h5><hr>
+                        <div class="card">
+                            <img src="{{candidato.logoDePartido}}" alt="" class="img-thumbnail img-fluid">
+                        </div>
+                    {{else}}
+                        <h5>Creando datos</h5><hr>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="col-md-10 mx-auto">
+                <form action="/candidato/operar" method="POST">
+                    <input type="hidden" name="_id" value="{{candidato._id}}">
+                    <div class="row m-2">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" placeholder="Numero de lista a representar" class="form-control" name="numeroDeLista" value="{{candidato.numeroDeLista}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombre de partido politico" class="form-control" name="nomDePartido" value="{{candidato.nomDePartido}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Aqui URL del logo por el momento" class="form-control" name="logoDePartido" value="{{candidato.logoDePartido}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="file" placeholder="Adjunte requisitos" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" placeholder="C.I de candidato a Presidente" class="form-control" name="idCanPres" value="{{candidato.idCanPres}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombres de candidato a Presidente" class="form-control" name="nomCanPres" value="{{candidato.nomCanPres}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="C.I de candidato a Vicepresidente" class="form-control" name="idCanVice" value="{{candidato.idCanVice}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombres de candidato a Vicepresidente" class="form-control" name="nomCanVice" value="{{candidato.nomCanVice}}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" placeholder="C.I de candidato a Secretario" class="form-control" name="idCanSecre" value="{{candidato.idCanSecre}}">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombres de candidato a Secretario" class="form-control" name="nomCanSecre" value="{{candidato.nomCanSecre}}">
+                            </div>
+                            <div class="text-center m-1">
+                                <button type="submit" class="btn btn-info btn-block">Guardar</button>
+                                <a href="/view/admin_crud_candidato" class="btn btn-danger btn-block">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
